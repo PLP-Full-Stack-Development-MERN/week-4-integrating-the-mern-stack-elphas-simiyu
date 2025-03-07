@@ -1,75 +1,92 @@
-**Week 4: MERN Stack Integration Project**
+# Task Manager (MERN Stack)
 
-**Objective:**
+## Project Overview
+The **Task Manager** is a full-stack web application built using the **MERN stack (MongoDB, Express.js, React, Node.js)**. It allows users to **create, read, update, and delete (CRUD)** tasks efficiently.
 
-- Develop a full-stack web application using the MERN stack.
-- Apply backend and frontend integration skills.
-- Practice RESTful API development and consumption.
-- Implement CRUD operations and proper project structuring.
+## Features
+- User-friendly task management
+- CRUD operations (Create, Read, Update, Delete)
+- Task attributes: **Title, Description, Status, Due Date**
+- RESTful API integration
+- Responsive UI using **CSS**
+- Frontend and Backend connection using **Axios**
 
-**Project Suggestion:** Build a "Task Manager" application where users can create, read, update, and delete tasks. Each task should include fields like title, description, status, and due date.
+## Folder Structure
+```
+mern-task-manager/
+│── backend/
+│   ├── models/        # Mongoose models
+│   ├── routes/        # API routes
+│   ├── controllers/   # Business logic
+│   ├── config/        # Database configurations
+│   ├── server.js      # Express.js server
+│   ├── .env           # Environment variables
+│── frontend/
+│   ├── src/
+│   ├── components/    # React components
+│   ├── pages/         # Page-based components
+│   ├── App.js         # Root component
+│   ├── index.js       # React entry point
+│── README.md
+```
 
-**Instructions:**
+## Installation & Setup
+### 1. Clone the Repository
+```bash
+git clone https://github.com/your-username/mern-task-manager.git
+cd mern-task-manager
+```
 
-1. **Setup the Project:**
-   - Create a new project folder called `mern-task-manager`.
-   - Initialize both backend and frontend directories within the project.
-   - Install necessary dependencies such as Express, Mongoose, React, and Axios.
+### 2. Backend Setup
+```bash
+cd backend
+npm install
+```
+- Create a **.env** file and add the following:
+```env
+MONGO_URI=your_mongodb_connection_string
+PORT=5000
+```
+- Run the server:
+```bash
+npm start
+```
 
-2. **Backend Development:**
-   - Set up an Express server and connect to MongoDB.
-   - Create a `Task` model with the following fields:
-     - `title` (String, required)
-     - `description` (String)
-     - `status` (String, default: 'pending', enum: ['pending', 'in progress', 'completed'])
-     - `dueDate` (Date)
-   - Implement RESTful API routes to:
-     - Create a new task
-     - Retrieve all tasks
-     - Update a task by ID
-     - Delete a task by ID
-   - Use environment variables for database connection.
+### 3. Frontend Setup
+```bash
+cd frontend
+npm install
+```
+- Start the frontend server:
+```bash
+npm start
+```
 
-3. **Frontend Development:**
-   - Set up a React project and configure routing.
-   - Create components:
-     - `TaskList` to display all tasks.
-     - `TaskForm` to add or update tasks.
-     - `TaskItem` to show an individual task.
-   - Implement forms to capture task details.
-   - Use Axios to make API requests to the backend.
-   - Implement UI styling using Tailwind CSS.
+## API Endpoints
+| Method | Endpoint      | Description |
+|--------|--------------|-------------|
+| POST   | `/tasks`     | Create a new task |
+| GET    | `/tasks`     | Retrieve all tasks |
+| PUT    | `/tasks/:id` | Update a task by ID |
+| DELETE | `/tasks/:id` | Delete a task by ID |
 
-4. **State Management:**
-   - Use React's `useState` and `useEffect` hooks to manage task state.
-   - Handle user interactions such as adding, updating, and deleting tasks.
+## Deployment
+### Backend (Render, Heroku, or other services)
+- Deploy your backend to **Render**:
+```bash
+git push render main
+```
 
-5. **Testing:**
-   - Run the backend server and test API endpoints using Postman.
-   - Run the React app and ensure API calls work correctly.
-   - Verify CRUD operations.
+### Frontend (Vercel, Netlify)
+- Deploy the frontend to **Vercel**:
+```bash
+vercel
+```
 
-6. **Project Deployment:**
-   - Deploy the backend to a cloud platform such as Render.
-   - Deploy the frontend to Vercel.
-   - Ensure proper connection between frontend and backend.
+## Contributing
+Feel free to **fork** this repository and submit a **pull request** with improvements.
 
-7. **Documentation:**
-   - Write a `README.md` file including:
-     - Project overview
-     - Installation steps
-     - API endpoint documentation
-     - Features and usage guide
+## License
+This project is licensed under the **MIT License**.
 
-8. **Submission:**
-   - Push your project to your GitHub repository.
-
-**Evaluation Criteria:**
-
-- Proper project setup and folder structuring.
-- Working CRUD operations in both frontend and backend.
-- Correct use of React state and hooks.
-- Well-structured API endpoints with appropriate error handling.
-- A functional and user-friendly UI with Tailwind CSS.
-- Clear and concise documentation.
 
